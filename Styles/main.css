@@ -1,0 +1,187 @@
+.board {
+  height: 90vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.grid-wrapper {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-wrapper button {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  /* display: none; */
+}
+
+.grid-wrapper img {
+  margin: 0 auto;
+  display: none;
+}
+
+.grid {
+  align-items: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: center;
+  height: 600px;
+  width: 1100px;
+  gap: 0;
+
+}
+
+.grid div {
+  border: 1px solid darkgreen;
+  flex-grow: 1;
+  height: 10%;
+  width: 9%;
+  margin: 0;
+  padding: 0;
+
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+  justify-content: space-around;
+
+}
+
+.indicators {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 80vh;
+}
+
+.best-score-container {
+  color: goldenrod
+}
+
+.grid div.hero {
+  background-image: url('../Gifs/idle.gif');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  cursor: pointer;
+  background-color: black;
+}
+
+#start {
+  background-color: lightgreen;
+  border-radius: 10px;
+  height: 60px;
+  width: 90px;
+  align-items: center;
+  margin: 0 auto
+}
+
+#reset {
+  background-color: coral;
+  border-radius: 10px;
+  height: 30px;
+  width: 90px;
+  align-items: center;
+  margin: 0 auto
+}
+
+.lives {
+  color: red;
+  font-size: 30px;
+}
+
+.grass {
+  background-image: url(../Images/grass.jpeg);
+  background-repeat: no-repeat;
+  /* background-size: contain; */
+  cursor: pointer;
+  height: 100%;
+
+}
+
+.water {
+  background-image: url(../Gifs/UCdE.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.tree {
+  background-image: url(../Gifs/Yg6D.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  background-color: darkgreen;
+  background-size: 70%;
+}
+
+.bridge {
+  background-image: url(../Images/br.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+.jeep {
+  background-image: url(../Images/cartoon-jeep.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  background-color: green;
+  background-position: center;
+}
+
+.tiger {
+  background-image: url(../Gifs/LRz3.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.snake {
+  background-image: url(../Gifs/ZiAe.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.lilyPad {
+  background-image: url(../Images/nenuphar.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.croco {
+  background-image: url(../Gifs/QTBv.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.tiger-lose {
+  background-image: url(../Images/tigerlose.jpeg);
+  transition: width 1s ease-in-out;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.black {
+  background-color: black;
+  background-size: cover;
+  cursor: pointer;
+}
