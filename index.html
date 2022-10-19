@@ -13,29 +13,34 @@
 <body>
   <div class="board">
     <div class="buttons-container">
-      <button id="start">START</button>
-      <button id="reset">RESET</button>
+      <button id="start"><span class="start-word">START</span><br><br>NORMAL MODE</button>
+      <button id="start-hard"><span class="start-word">START</span><br><br>HARD MODE</button>
     </div>
     <div class="grid-wrapper">
       <div class="grid">
+        <!-- <img id="imageJungle" src="Images/junglelose.jpeg"> -->
       </div>
     </div>
     <div class="indicators">
       <div class="lives" id="lives-display">&#10084 &#10084 &#10084</div>
       <div class="score-container">
-        <p>TIME ELAPSED:</p>
+        <p>TIME ELAPSED</p>
         <div class="time-elapsed"></div>
       </div>
       <div class="best-score-container">
-        <p>BEST TIME:</p>
-        <div class="best-time"></div>
+        <p>BEST TIME</p>
+        <div class="best-time"><br></div>
+        <div class="best-time-hard"></div>
       </div>
     </div>
+    <audio class="audio-intro" src="Sounds/mixkit-goin-back-to-alabama-830.mp3"></audio>
     <audio class="audio-tiger" src="Sounds/tiger.mp3"></audio>
     <audio class="audio-snake" src="Sounds/snake.mp3"></audio>
     <audio class="audio-water" src="Sounds/water.wav"></audio>
     <audio class="audio-lily" src="Sounds/yeah.wav"></audio>
     <audio class="audio-croco" src="Sounds/croco.mp3"></audio>
+    <audio class="audio-mosquito" src="Sounds/mixkit-large-fly-buzzing-41.wav"></audio>
+    <audio class="audio-gorilla" src="Sounds/mixkit-little-monkey-screech-104.wav"></audio>
     <audio class="audio-jeep" src="Sounds/car.wav"></audio>
     <audio class="audio-music" src="Sounds/music.mp3"></audio>
     <audio class="audio-win" src="Sounds/win.wav"></audio>

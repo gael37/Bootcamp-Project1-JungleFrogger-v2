@@ -12,6 +12,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: url(../Images/jugleimg.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* background-size: contain; */
+  width: 60%;
+  height: 105%;
+  padding: 0;
+  margin-top: 20px;
+
+  /* background-color: red; */
 }
 
 .grid-wrapper button {
@@ -21,10 +32,7 @@
   /* display: none; */
 }
 
-.grid-wrapper img {
-  margin: 0 auto;
-  display: none;
-}
+
 
 .grid {
   align-items: center;
@@ -36,7 +44,6 @@
   height: 600px;
   width: 1100px;
   gap: 0;
-
 }
 
 .grid div {
@@ -49,12 +56,21 @@
 
 }
 
+.score-container {
+  font-weight: bold;
+}
+
+.score-container p {
+  font-size: 30px;
+}
+
 .buttons-container {
   display: flex;
   flex-direction: column;
   height: 75vh;
   justify-content: space-around;
-
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .indicators {
@@ -63,10 +79,17 @@
   justify-content: space-around;
   align-items: center;
   height: 80vh;
+  margin: 0;
+  padding: 0;
 }
 
 .best-score-container {
+  font-weight: bold;
   color: goldenrod
+}
+
+.best-score-container p {
+  font-size: 30px;
 }
 
 .grid div.hero {
@@ -78,20 +101,25 @@
   background-color: black;
 }
 
+.start-word {
+  font-weight: bold;
+  font-size: 20px;
+}
+
 #start {
   background-color: lightgreen;
   border-radius: 10px;
-  height: 60px;
-  width: 90px;
+  height: 100px;
+  width: 130px;
   align-items: center;
   margin: 0 auto
 }
 
-#reset {
+#start-hard {
   background-color: coral;
   border-radius: 10px;
-  height: 30px;
-  width: 90px;
+  height: 100px;
+  width: 130px;
   align-items: center;
   margin: 0 auto
 }
@@ -167,6 +195,20 @@
 
 .croco {
   background-image: url(../Gifs/QTBv.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.gorilla {
+  background-image: url(../Images/gorilla.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.mosquito {
+  background-image: url(../Gifs/BBmm.gif);
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
