@@ -13,7 +13,9 @@ function init() {
   const audioMusic = document.querySelector('.audio-music')
   const audioWin = document.querySelector('.audio-win')
   const audioLost = document.querySelector('.audio-lost')
-  const displayResult = document.querySelector('.result')
+  const audioYeah = document.querySelector('.audio-yeah')
+  const displayTimeElapsed = document.querySelector('.time-elapsed')
+  const displayBestTime = document.querySelector('.best-time')
   const livesDisplay = document.querySelector('#lives-display')
 
   // const board = document.querySelector('.grid')
@@ -27,7 +29,23 @@ function init() {
   const startingPosition = 94
   let currentPosition = startingPosition
   let lives = 3
-  let timer
+  let timerEnemy
+  let timerGame = 0
+  let timerGameId
+
+  displayBestTime.innerHTML = getHighScore().toFixed(1) + ' s'
+  displayBestTime.style.textAlign = 'center'
+
+  function getHighScore() {
+    return localStorage.getItem('jungle-frogger-high-score') ? parseFloat(localStorage.getItem('jungle-frogger-high-score')) : 0
+  }
+
+  function setHighScore(timerGame) {
+    if (!getHighScore() || getHighScore() > timerGame) {
+      localStorage.setItem('jungle-frogger-high-score', timerGame)
+      displayBestTime.innerHTML = getHighScore().toFixed(1)
+    }
+  }
 
   // CREATION OF THE GRID
   function createGrid() {
@@ -78,9 +96,7 @@ function init() {
     cells[8].classList.add('jeep')
     cells[32].classList.add('bridge')
     cells[32].classList.remove('water')
-
   }
-
 
   // CREATION OF ENEMY CLASS
   class Enemy {
@@ -103,8 +119,7 @@ function init() {
 
     movesRight() {
       let i = this.currentPos - 1
-      console.log(i)
-      timer = setInterval(() => {
+      timerEnemy = setInterval(() => {
         if (i === this.finalPos) {
           cells[i].classList.remove(this.class)
           i = this.initialPos - 1
@@ -118,8 +133,7 @@ function init() {
 
     movesLeft() {
       let i = this.currentPos
-      console.log(i)
-      timer = setInterval(() => {
+      timerEnemy = setInterval(() => {
         if (i === this.finalPos) {
           cells[i].classList.remove(this.class)
           i = this.initialPos
@@ -155,6 +169,11 @@ function init() {
 
   // FUNCTION START GAME
   function startGame() {
+    displayTimeElapsed.style.textAlign = 'center'
+    timerGameId = setInterval(() => {
+      timerGame = timerGame + 0.1
+      displayTimeElapsed.innerHTML = timerGame.toFixed(1) + ' s'
+    }, 100)
     audioMusic.play()
     tiger1.movesRight()
     tiger2.movesRight()
@@ -214,7 +233,9 @@ function init() {
       currentPosition = startingPosition
     } else {
       livesDisplay.innerHTML = lives ? '&#10084'.repeat(lives) : '&#128148'
-      displayResult.innerHTML = 'YOU LOST !'
+      clearInterval(timerGameId)
+      setHighScore()
+      displayTimeElapsed.innerHTML = 'YOU LOST !'
       audioMusic.muted = true
       setTimeout(() => {
         audioLost.play()
@@ -224,8 +245,6 @@ function init() {
         audioCroco.muted = true
       }, 300)
       setTimeout(() => {
-        displayResult.innerHTML = 'YOU LOST'
-        displayResult.style.color = 'red'
         gridWrapper.innerHTML = 'YOU LOST !'
         gridWrapper.style.color = 'red'
         gridWrapper.style.fontSize = '50px'
@@ -257,23 +276,26 @@ function init() {
 
   const checkTimer = setInterval(() => {
     if (cells[currentPosition].classList.contains('jeep')) {
+      clearInterval(timerGameId)
+      setHighScore(timerGame)
       audioMusic.muted = true
+      audioYeah.play()
       audioJeep.play()
+      setTimeout(() => {
+        audioYeah.muted = true
+      }, 700)
       setTimeout(() => {
         audioWin.play()
       }, 1000)
       setTimeout(() => {
         audioJeep.muted = true
         audioWin.muted = true
-        displayResult.innerHTML = 'YOU WON !'
-        displayResult.style.color = 'green'
-        gridWrapper.innerHTML = 'YOU WON !'
+        gridWrapper.innerHTML = 'You WON !<br>You cleared the level in ' + timerGame.toFixed(1) + 's'
+        gridWrapper.style.textAlign = 'center'
         gridWrapper.style.color = 'green'
         gridWrapper.style.fontSize = '50px'
-
         document.removeEventListener('keydown', handleMovement)
       }, 2000)
-
     }
   }, 50)
 
@@ -285,3 +307,5 @@ function init() {
 }
 
 window.addEventListener('DOMContentLoaded', init)
+
+
