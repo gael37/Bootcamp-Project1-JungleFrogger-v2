@@ -1,5 +1,6 @@
 function init() {
 
+  // DOM objects
   const grid = document.querySelector('.grid')
   const gridWrapper = document.querySelector('.grid-wrapper')
   const start = document.querySelector('#start')
@@ -21,22 +22,21 @@ function init() {
   const displayBestTimeHard = document.querySelector('.best-time-hard')
   const livesDisplay = document.querySelector('#lives-display')
 
-  // const board = document.querySelector('.grid')
-
   // GRID VARIABLES
   const width = 10 // width of our grid (number of cells in a row)
   const height = 10 // height of our grid (number of cells in a column)
   const cellCount = width * height
   const cells = []
+
   // HERO VARIABLES
   const startingPosition = 94
   let currentPosition = startingPosition
   let lives = 3
-  let timerEnemy
   let timerGame = 0
   let timerGameHard = 0
   let timerGameId
 
+  // local storage for high score functions
   displayBestTime.innerHTML = 'NORMAL  ' + getHighScore().toFixed(1) + ' s'
   displayBestTime.style.textAlign = 'center'
   displayBestTimeHard.innerHTML = 'HARD  ' + getHighScoreHard().toFixed(1) + ' s'
@@ -48,15 +48,15 @@ function init() {
   function getHighScoreHard() {
     return localStorage.getItem('jungle-frogger-high-score-hard') ? parseFloat(localStorage.getItem('jungle-frogger-high-score-hard')) : 0
   }
-  function setHighScore() {
-    if (!getHighScore() || getHighScore() > timerGame) {
-      localStorage.setItem('jungle-frogger-high-score', timerGame)
+  function setHighScore(score) {
+    if (!getHighScore() || getHighScore() > score) {
+      localStorage.setItem('jungle-frogger-high-score', score)
       displayBestTime.innerHTML = getHighScore().toFixed(1)
     }
   }
-  function setHighScoreHard() {
-    if (!getHighScoreHard() || getHighScoreHard() > timerGameHard) {
-      localStorage.setItem('jungle-frogger-high-score-hard', timerGameHard)
+  function setHighScoreHard(score) {
+    if (!getHighScoreHard() || getHighScoreHard() > score) {
+      localStorage.setItem('jungle-frogger-high-score-hard', score)
       displayBestTimeHard.innerHTML = getHighScoreHard().toFixed(1)
     }
   }
@@ -64,23 +64,15 @@ function init() {
   // CREATION OF THE GRID
   function createGrid() {
     for (let i = 0; i < cellCount; i++) {
-      // Create the element using createElement
       const cell = document.createElement('div')
-      // display the index of the element
-      // cell.innerHTML = i
-      // add the index as an data-id
       cell.dataset.index = i
-      // append the new cell to the grid
       grid.appendChild(cell)
-      // Push cell into array
       cells.push(cell)
     }
     for (let i = 0; i < cellCount; i++) {
-      // Adding our character to the start position
       addHero(startingPosition)
     }
   }
-
 
   // CREATION OF THE BACKGROUND
   function createBG() {
@@ -124,7 +116,7 @@ function init() {
 
     movesRight() {
       let i = this.currentPos - 1
-      timerEnemy = setInterval(() => {
+      this.timerEnemy = setInterval(() => {
         if (i === this.finalPos) {
           cells[i].classList.remove(this.class)
           i = this.initialPos - 1
@@ -138,7 +130,7 @@ function init() {
 
     movesLeft() {
       let i = this.currentPos
-      timerEnemy = setInterval(() => {
+      this.timerEnemy = setInterval(() => {
         if (i === this.finalPos) {
           cells[i].classList.remove(this.class)
           i = this.initialPos + 1
@@ -152,7 +144,7 @@ function init() {
 
     movesFastRight() {
       let i = this.currentPos - 1
-      timerEnemy = setInterval(() => {
+      this.timerEnemy = setInterval(() => {
         if (i === this.finalPos) {
           cells[i].classList.remove(this.class)
           i = this.initialPos - 1
@@ -166,7 +158,7 @@ function init() {
 
     movesFastLeft() {
       let i = this.currentPos
-      timerEnemy = setInterval(() => {
+      this.timerEnemy = setInterval(() => {
         if (i === this.finalPos) {
           cells[i].classList.remove(this.class)
           i = this.initialPos + 1
@@ -175,13 +167,14 @@ function init() {
         cells[i].classList.remove(this.class)
         i--
         checkCollision(currentPosition)
-      }, 800)
+      }, 500)
     }
 
   }
 
   // CREATION OF THE ANIMAL OBJECTS INSTANCES
   const tiger1 = new Enemy('tiger1', 'tiger', 80, 80, 89)
+
   const tiger2 = new Enemy('tiger2', 'tiger', 80, 83, 89)
   const tiger3 = new Enemy('tiger3', 'tiger', 80, 86, 89)
 
@@ -190,29 +183,20 @@ function init() {
   const snake3 = new Enemy('snake3', 'snake', 69, 63, 60)
 
   const croco1 = new Enemy('croco1', 'croco', 29, 24, 20)
-  const croco2 = new Enemy('croco2', 'croco', 29, 21, 20)
+  const croco2 = new Enemy('croco2', 'croco', 20, 21, 29)
 
   const lilyPad1 = new Enemy('lilyPad1', 'lilyPad', 50, 50, 59)
   const lilyPad2 = new Enemy('lilyPad2', 'lilyPad', 50, 53, 59)
   const lilyPad3 = new Enemy('lilyPad3', 'lilyPad', 50, 57, 59)
 
   const mosquito1 = new Enemy('mosquito1', 'mosquito', 49, 41, 40)
-  const mosquito2 = new Enemy('mosquito2', 'mosquito', 49, 44, 40)
+  const mosquito2 = new Enemy('mosquito2', 'mosquito', 30, 32, 39)
 
-
-  const gorilla1 = new Enemy('gorilla1', 'gorilla', 70, 71, 79)
-  const gorilla2 = new Enemy('gorilla2', 'gorilla', 70, 77, 79)
-  const gorilla3 = new Enemy('gorilla3', 'gorilla', 70, 79, 79)
-
-
-
-  // EXECUTION
-
-
-
+  const gorilla1 = new Enemy('gorilla1', 'gorilla', 70, 72, 79)
 
   // FUNCTION START GAME
   function startGame() {
+    audioMusic.play()
     gridWrapper.style.background = 'none'
     createGrid()
     createBG()
@@ -221,21 +205,22 @@ function init() {
       timerGame = timerGame + 0.1
       displayTimeElapsed.innerHTML = timerGame.toFixed(1) + ' s'
     }, 100)
-    audioMusic.play()
     tiger1.movesRight()
+    console.log(tiger1.timerEnemy)
     tiger2.movesRight()
     tiger3.movesRight()
-    snake1.movesLeft()
-    snake2.movesLeft()
-    snake3.movesLeft()
+    snake1.movesFastLeft()
+    snake2.movesFastLeft()
+    snake3.movesFastLeft()
     lilyPad1.movesRight()
     lilyPad2.movesRight()
     lilyPad3.movesRight()
-    croco1.movesLeft()
-    croco2.movesLeft()
+    croco1.movesFastLeft()
   }
 
+  // FUNCTION START HARD GAME
   function startHardGame() {
+    audioMusic.play()
     gridWrapper.style.background = 'none'
     createGrid()
     createBG()
@@ -244,23 +229,19 @@ function init() {
       timerGameHard = timerGameHard + 0.1
       displayTimeElapsed.innerHTML = timerGameHard.toFixed(1) + ' s'
     }, 100)
-    audioMusic.play()
     tiger1.movesFastRight()
     tiger2.movesFastRight()
     tiger3.movesFastRight()
     snake1.movesFastLeft()
-    snake2.movesFastLeft()
     snake3.movesFastLeft()
     mosquito1.movesFastLeft()
-    mosquito2.movesFastLeft()
+    mosquito2.movesFastRight()
     gorilla1.movesFastRight()
-    // gorilla2.movesFastRight()
-    gorilla3.movesFastRight()
     lilyPad1.movesFastRight()
     lilyPad2.movesFastRight()
     lilyPad3.movesFastRight()
     croco1.movesFastLeft()
-    croco2.movesFastLeft()
+    croco2.movesFastRight()
   }
 
   // FUNCTIONS TO HANDLE MOVEMENT OF HERO
@@ -294,8 +275,9 @@ function init() {
     checkCollision(currentPosition)
   }
 
-  // FUNCTION HANDLE COLLISION
+  // FUNCTION HANDLE COLLISION AND WHEN PLAYER LOSES
   function hitsHero(position) {
+    document.removeEventListener('keydown', handleMovement)
     lives -= 1
     if (lives > 0) {
       livesDisplay.innerHTML = lives ? '&#10084'.repeat(lives) : '&#128148'
@@ -303,6 +285,7 @@ function init() {
       addHero(startingPosition)
       setTimeout(() => {
         window.alert('Oops! Give it another try')
+        document.addEventListener('keydown', handleMovement)
       }, 200)
       currentPosition = startingPosition
     } else {
@@ -322,11 +305,10 @@ function init() {
         gridWrapper.innerHTML = 'YOU LOST !'
         gridWrapper.style.color = 'red'
         gridWrapper.style.fontSize = '50px'
-
-        document.removeEventListener('keydown', handleMovement)
       }, 2000)
     }
   }
+
   // COLLISION DETECTION
 
   function checkCollision(position) {
@@ -356,13 +338,14 @@ function init() {
     }
   }
 
+  // WHEN PLAYER WINS
   const checkTimer = setInterval(() => {
     if (cells[currentPosition].classList.contains('jeep')) {
       clearInterval(timerGameId)
-      if (timerGame) {
-        setHighScore()
+      if (timerGame > 0) {
+        setHighScore(timerGame)
       } else {
-        setHighScoreHard()
+        setHighScoreHard(timerGameHard)
       }
       audioMusic.muted = true
       audioYeah.play()
@@ -379,7 +362,7 @@ function init() {
         if (timerGame) {
           gridWrapper.innerHTML = 'You WON !<br>You cleared the level in ' + timerGame.toFixed(1) + 's'
         } else {
-          gridWrapper.innerHTML = 'You WON !<br>You cleared the level in ' + timerGameHard.toFixed(1) + 's'
+          gridWrapper.innerHTML = 'You WON !<br>Congrats! You cleared the hard level in ' + timerGameHard.toFixed(1) + 's'
         }
         gridWrapper.style.textAlign = 'center'
         gridWrapper.style.color = 'green'
