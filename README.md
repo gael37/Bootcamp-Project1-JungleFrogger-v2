@@ -1,4 +1,4 @@
-Description
+#Description
 
 This project is the first of the SEI course. We’re supposed to create a playable game from the browser using HTML, CSS and JavaScript.
 
