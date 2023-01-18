@@ -1,23 +1,24 @@
-#Description
+# Description
 
 This project is the first of the SEI course. We’re supposed to create a playable game from the browser using HTML, CSS and JavaScript.
 
-Deployment link
+# Deployment link
 
 
 
-Getting Started/Code Installation
+# Getting Started/Code Installation
 
 The project is hosted on my github page; username Gael37.
 
-Timeframe & Working Team (Solo/Pair/Group)
+# Timeframe & Working Team (Solo/Pair/Group)
 
 The project is a week long and was completely individually.
-Technologies Used
+
+# Technologies Used
 
 I used HTML, CSS and javascript programming languages, Excalidraw for designing the wireframe, and VScode as code editor.
 
-Brief
+# Brief
 
 -Render a game in the browser
 -Be built on a grid, no HTML canvas
@@ -34,7 +35,7 @@ Necessary deliverables:
 -A “readme” file with explanations of the technologies used, the approach taken, installation instructions, unsolved problems, etc.
 
 
-Planning
+# Planning
 
 On day 1 I started by sketching my future game main features (main character, enemies, background, grid).
 My game is a frogger so it consists of a main character evolving across the grid, trying to dodge waves of obstacles and trying to reach the finish line.
@@ -42,7 +43,7 @@ I came with the idea of a jungle-styled game with animals (see the wireframe bel
 
 Once that sketching was done, I had a very clear idea of where to start, create the elements on HTML (grid container), start button etc.
 
-Build/Code Process
+# Build/Code Process
 
 I started by creating basic elements with HTML, the grid container, a start button, lives and a score.
 Then I used JavaScript to create all the cells in the grid. It is a 10x10 grid on purpose, to make coding simpler for my first project. The JavaScript coding part uses DOM manipulation, which requires grabbing elements from the HTML, via in-built methods such as querySelector. See the snippet below for the creation of the grid:
@@ -90,7 +91,7 @@ I also worked on one last thing, the score in hard mode is stored and displayed 
 
 
 
-Challenges
+# Challenges
 
 The time intervals were the challenge. I could not access the main ones, therefore was not able to create any pause or reset button.
 My game isn’t so smooth to play because of that. The user has to refresh the page every time he wants to start a new game.
@@ -100,27 +101,27 @@ I also faced a challenge with the sounds, sometimes not working and I couldn't s
 
 I faced a last challenge with the addition of HTML content via the DOM, as adding one piece of content was easy, but creating a whole new variety of elements, for example when the player wins, came across as a tricky task.
 
-Wins
+# Wins
 
 I’m happy about the fact that my project meets all the requirements, and also contains extra functionalities.
 This game is playable and for my first project I think it is a win, as I came across a lot of bugs, problems with my declaration of variables, struggling with finding which methods to use etc. but almost always found a solution, either by reviewing my code or searching for help on the internet.
 I worked on a variety of aspects of coding which is a very good practice.
 
-Key Learnings/Takeaways
+# Key Learnings/Takeaways
 
 I feel way more comfortable with HTML and JavaScript. I got rid of this ‘blank page fear’ of where to start? Am I gonna be able to go through all of this? And meet all the requirements?
 A project like that for a beginner is scary at first.
 But now, I’ve seen that by going step by step with a scientific approach, with looking for some clues in the same time online, looking at how the other developers approached the issues, etc, made me realise that with determination and perseverance I’m able to solve problems one by one.
 The main takeaway from this project is that I need to be careful at first , not jumping straight to coding, and think more about my plan and clean my code progressively to avoid any future problems that in the end delay the development of the project substantially.
 
-Bugs
+# # Bugs
 
 I faced little bugs with the sounds. Sometimes it was just not working. I still don’t know why.
 I wanted to enable the game to play a song right after the loading of the DOM content, but was unsuccessful at it.
 And I had to bypass a detour to stop the songs, as the basic in-built methods to manage the audio were not working.
 
 
-Future Improvements
+# Future Improvements
 
 I will definitely revisit my code for this project, as I feel that my code is unclean, extra long, and not easily usable for adding extra functionalities.
 I feel that it is a bit rigid. So I would definitely rework my main enemy-movement functions and set intervals in a smarter way to be able to clear them easily, and therefore add a pause button etc.
