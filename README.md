@@ -40,6 +40,8 @@ Necessary deliverables:
 On day 1 I started by sketching my future game main features (main character, enemies, background, grid).
 My game is a frogger so it consists of a main character evolving across the grid, trying to dodge waves of obstacles and trying to reach the finish line.
 I came with the idea of a jungle-styled game with animals (see the wireframe below).
+<img width="696" alt="image" src="https://user-images.githubusercontent.com/113553373/213197677-ee4bcaff-2c98-4065-9046-fe9cdddd522d.png">
+
 
 Once that sketching was done, I had a very clear idea of where to start, create the elements on HTML (grid container), start button etc.
 
@@ -47,6 +49,8 @@ Once that sketching was done, I had a very clear idea of where to start, create 
 
 I started by creating basic elements with HTML, the grid container, a start button, lives and a score.
 Then I used JavaScript to create all the cells in the grid. It is a 10x10 grid on purpose, to make coding simpler for my first project. The JavaScript coding part uses DOM manipulation, which requires grabbing elements from the HTML, via in-built methods such as querySelector. See the snippet below for the creation of the grid:
+<img width="411" alt="image" src="https://user-images.githubusercontent.com/113553373/213197975-3f61d861-9816-440d-84df-a82f166ad2ec.png">
+<img width="543" alt="image" src="https://user-images.githubusercontent.com/113553373/213198052-6905c81a-5dfa-42ff-8311-e2aa0ccdc91a.png">
 
 
 
