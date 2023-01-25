@@ -6,17 +6,13 @@ This project is the first of the SEI course. We’re supposed to create a playab
 
 https://gael-duchesne-jungle-frogger.netlify.app/
 
-# Getting Started/Code Installation
-
-The project is hosted on my github page; username Gael37.
-
 # Timeframe & Working Team (Solo/Pair/Group)
 
-The project is a week long and was completely individually.
+The project is a week long and was completely individual.
 
 # Technologies Used
 
-I used HTML, CSS and javascript programming languages, Excalidraw for designing the wireframe, and VScode as code editor.
+I used HTML, CSS and JavaScript and Excalidraw for designing the wireframe.
 
 # Brief
 
@@ -30,8 +26,8 @@ I used HTML, CSS and javascript programming languages, Excalidraw for designing 
 Necessary deliverables:
 
 -A working game, built by you, hosted somewhere on the internet
--A link to your hosted game in the URL section of your GitHub repo
--git repository hosted on GitHub, with a link to your hosted game, and frequents commits dating back to the very beginning of the project
+-A link to your hosted game in the URL section of your GitHub repository
+-Git repository hosted on GitHub, with a link to your hosted game, and frequents commits dating back to the very beginning of the project
 -A “readme” file with explanations of the technologies used, the approach taken, installation instructions, unsolved problems, etc.
 
 
