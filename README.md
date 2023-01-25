@@ -39,6 +39,7 @@ Necessary deliverables:
 On day 1 I started by sketching my future game main features (main character, enemies, background, grid).
 My game is a frogger so it consists of a main character evolving across the grid, trying to dodge waves of obstacles and trying to reach the finish line.
 I came with the idea of a jungle-styled game with animals (see the wireframe below).
+
 <img width="696" alt="image" src="https://user-images.githubusercontent.com/113553373/213197677-ee4bcaff-2c98-4065-9046-fe9cdddd522d.png">
 
 
@@ -48,21 +49,26 @@ Once that sketching was done, I had a very clear idea of where to start, create 
 
 I started by creating basic elements with HTML, the grid container, a start button, lives and a score.
 Then I used JavaScript to create all the cells in the grid. It is a 10x10 grid on purpose, to make coding simpler for my first project. The JavaScript coding part uses DOM manipulation, which requires grabbing elements from the HTML, via in-built methods such as querySelector. See the snippet below for the creation of the grid:
+
 <img width="411" alt="image" src="https://user-images.githubusercontent.com/113553373/213197975-3f61d861-9816-440d-84df-a82f166ad2ec.png">
 <img width="543" alt="image" src="https://user-images.githubusercontent.com/113553373/213198052-6905c81a-5dfa-42ff-8311-e2aa0ccdc91a.png">
 
 
 
 Then I added functions for the movement of the main character (movement is made using arrow keys) on the grid:
+
 <img width="559" alt="image" src="https://user-images.githubusercontent.com/113553373/213200846-b7f2a46a-a540-4d67-b7b1-f073ecdbee42.png">
 
 
 On day 2 I worked on the background visuals., Each cell being an element of the cells array, I could simply add CSS classes to each one of them to visually create my background:
+
 <img width="453" alt="image" src="https://user-images.githubusercontent.com/113553373/213200932-6cf14b48-059d-4396-b81e-c8a59a799807.png">
+
 <img width="639" alt="image" src="https://user-images.githubusercontent.com/113553373/213200987-89b4899b-c965-4209-89da-21ada06baf02.png">
 
 
 For the moving elements on the screen, I opted to create an Enemy JavaScript class:
+
 ![image](https://user-images.githubusercontent.com/113553373/213201152-ca1d55b0-a7b1-4f37-a83a-929e47c5a5a1.png)
 
 Each Animal instance has specific parameters, such as ‘name’, ‘starting position’ and ‘final position’ and the Animal class has methods that handle their movement.
@@ -70,20 +76,25 @@ I coded the movement of the animals intuitively without any planning and it seem
 Inserting time intervals within the methods was retrospectively probably a bad idea as I struggled thereafter to access these intervals and was not able to clear it.
 
 I followed by creating instances of my class:
+
 ![image](https://user-images.githubusercontent.com/113553373/213201221-e1811dde-579a-4115-b8c7-4cb6042aeebb.png)
 
 On day 3 I worked on the event listeners that I would add to the game, including one for the Start button.
 That event listener triggers a callback function that starts a new game.
+
 ![image](https://user-images.githubusercontent.com/113553373/213201272-4a042a28-5e7f-45dc-aee1-c4f1c75d3a8e.png)
 
 On day 4 I worked on the collision detection  and on the win/loss conditions.
+
 ![image](https://user-images.githubusercontent.com/113553373/213201327-924acf5f-67eb-4ef7-b75b-bd15fc30cd3e.png)
 
 
 When the hero faces an enemy, a function hitsHero is triggered, which plays some sounds depending on the nature (CSS class) of the obstacle, hero loses lives, etc. After each collision, a prompt shows up to explain what happened, and after 3 collisions, the user loses the game, a message pops up, via the innerHTML method:
+
 ![image](https://user-images.githubusercontent.com/113553373/213201417-180ebf1c-ba04-4be3-be5b-0b4309d4e367.png)
 
 Similarly, when the user wins, a message pops up, specifying the score:
+
 ![image](https://user-images.githubusercontent.com/113553373/213201464-5e3253e9-c63e-4e62-baaa-b0a92fc4d5b9.png)
 
 Movement of the hero is also frozen via the method removeEventListener.
@@ -93,9 +104,11 @@ At this stage my Minimum Viable Product was finished and I had a bit more time s
 
 In order to create a second level of difficulty, my idea was to create another start button, linked to another event listener, triggering a function that creates a second background (more enemies).Animals also move faster, via extra class methods. You can see the function for 
 generating the second background below:
+
 ![image](https://user-images.githubusercontent.com/113553373/213201531-7ddcf408-f96c-4e5c-a068-4f5eb8410aaa.png)
 
 I also worked on one last thing, the score in hard mode is stored and displayed independently:
+
 ![image](https://user-images.githubusercontent.com/113553373/213201586-94c69af3-3b70-4fc8-9e2b-1ea87d596352.png)
 
 
