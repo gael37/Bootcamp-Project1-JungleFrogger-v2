@@ -12,23 +12,26 @@ The project is a week long and was completely individual.
 
 # Technologies Used
 
-I used HTML, CSS and JavaScript and Excalidraw for designing the wireframe.
+- HTML
+- CSS
+- JavaScript
+- Excalidarw
 
 # Brief
 
--Render a game in the browser
--Be built on a grid, no HTML canvas
--Design logic for winning and visually display which player won
--Include separate HTML, CSS and JavaScript files
--Use JavaScript for DOM manipulation
--Deploy your game online
+- Render a game in the browser
+- Be built on a grid, no HTML canvas
+- Design logic for winning and visually display which player won
+- Include separate HTML, CSS and JavaScript files
+- Use JavaScript for DOM manipulation
+- Deploy your game online
 
 Necessary deliverables:
 
--A working game, built by you, hosted somewhere on the internet
--A link to your hosted game in the URL section of your GitHub repository
--Git repository hosted on GitHub, with a link to your hosted game, and frequents commits dating back to the very beginning of the project
--A “readme” file with explanations of the technologies used, the approach taken, installation instructions, unsolved problems, etc.
+- A working game, built by you, hosted somewhere on the internet
+- A link to your hosted game in the URL section of your GitHub repository
+- Git repository hosted on GitHub, with a link to your hosted game, and frequents commits dating back to the very beginning of the project
+- A “readme” file with explanations of the technologies used, the approach taken, installation instructions, unsolved problems, etc.
 
 
 # Planning
