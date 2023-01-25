@@ -128,7 +128,7 @@ A project like that for a beginner is scary at first.
 But now, I’ve seen that by going step by step with a scientific approach, with looking for some clues in the same time online, looking at how the other developers approached the issues, etc, made me realise that with determination and perseverance I’m able to solve problems one by one.
 The main takeaway from this project is that I need to be careful at first , not jumping straight to coding, and think more about my plan and clean my code progressively to avoid any future problems that in the end delay the development of the project substantially.
 
-# # Bugs
+# Bugs
 
 I faced little bugs with the sounds. Sometimes it was just not working. I still don’t know why.
 I wanted to enable the game to play a song right after the loading of the DOM content, but was unsuccessful at it.
