@@ -4,7 +4,7 @@ This project is the first of the SEI course. We’re supposed to create a playab
 
 # Deployment link
 
-(https://gael-duchesne-jungle-frogger.netlify.app/)
+https://gael-duchesne-jungle-frogger.netlify.app/
 
 # Getting Started/Code Installation
 
