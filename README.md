@@ -123,7 +123,7 @@ I worked on a variety of aspects of coding which is a very good practice.
 
 # Key Learnings/Takeaways
 
-I feel way more comfortable with HTML and JavaScript. I got rid of this ‘blank page fear’ of where to start? Am I gonna be able to go through all of this? And meet all the requirements?
+I feel way more comfortable with HTML and JavaScript. I got rid of this ‘blank page fear’ of where to start.
 A project like that for a beginner is scary at first.
 But now, I’ve seen that by going step by step with a scientific approach, with looking for some clues in the same time online, looking at how the other developers approached the issues, etc, made me realise that with determination and perseverance I’m able to solve problems one by one.
 The main takeaway from this project is that I need to be careful at first , not jumping straight to coding, and think more about my plan and clean my code progressively to avoid any future problems that in the end delay the development of the project substantially.
