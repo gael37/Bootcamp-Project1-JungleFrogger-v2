@@ -399,6 +399,7 @@ function init() {
   // RESET FUNCTION
 
   const handleReset = () => {
+    audioMusic.muted = true
     start.style.visibility = 'visible'
     startHard.style.visibility = 'visible'
     resetButton.style.visibility = 'visible'
