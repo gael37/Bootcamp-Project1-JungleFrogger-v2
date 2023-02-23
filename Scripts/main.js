@@ -297,6 +297,7 @@ function init() {
       gameNormalRunning = true
       gameHardPaused = false
       start.innerHTML = 'PAUSE'
+      audioMusic.muted = false
       audioMusic.play()
       gridWrapper.style.background = 'none'
       // if (startingPosition === 94) {
@@ -361,6 +362,7 @@ function init() {
       document.addEventListener('keydown', handleMovement)
       gameHardRunning = true
       gameHardPaused = false
+      audioMusic.muted = false
       audioMusic.play()
       startHard.innerHTML = 'PAUSE'
       gridWrapper.style.background = 'none'
