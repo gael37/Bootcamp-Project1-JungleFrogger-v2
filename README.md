@@ -4,7 +4,7 @@ This project is an upgraded version of the Jungle Frogger game, written using on
 
 # Deployment link
 
-(https://gael-duchesne-jungle-frogger-v2.netlify.app/)
+https://gael-duchesne-jungle-frogger-v2.netlify.app/
 
 # Timeframe & Working Team (Solo/Pair/Group)
 
