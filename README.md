@@ -1,10 +1,10 @@
 # Description
 
-This project is the first of the SEI course. We’re supposed to create a playable game from the browser using HTML, CSS and JavaScript.
+This project is an upgraded version of the Jungle Frogger game, written using only HTML, CSS and JavaScript.
 
 # Deployment link
 
-https://gael-duchesne-jungle-frogger.netlify.app/
+[https://gael-duchesne-jungle-frogger.netlify.app/](https://gael-duchesne-jungle-frogger-v2.netlify.app/)
 
 # Timeframe & Working Team (Solo/Pair/Group)
 
