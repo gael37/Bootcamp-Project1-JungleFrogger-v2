@@ -59,7 +59,7 @@ The main takeaway is that it is an unpleasant experience to go through code that
 - is not sectionned into functions and relevant sections
 
 Having reviewed my own code I was able to reflect on the way I should write it in the future.
-I was able to understand more the importance of using modular components to improve reusablity and readability of the code.
+I was able to grasp the importance of using modular components to improve reusablity and readability of the code.
 
 
 
