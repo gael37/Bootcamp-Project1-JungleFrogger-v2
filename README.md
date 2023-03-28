@@ -47,7 +47,7 @@ The main challenge here was to refactor badly written code. I had to read throug
 # Wins
 
 All my new features and modifications went through, so my game is at least more confortable to play with this reset and pause functionalities, as no page refresh is no longer needed to restart the game.
-The little messages hints displayed in-game make the experience a bit more interesting.
+The in-game hints make the experience a bit more interesting as well.
 
 # Key Learnings/Takeaways
 
